@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 8%;
+    --foreground: 43 50% 85%;
+
+    --card: 222 40% 12%;
+    --card-foreground: 43 50% 85%;
+
+    --popover: 222 40% 12%;
+    --popover-foreground: 43 50% 85%;
+
+    --primary: 43 72% 55%;
+    --primary-foreground: 222 47% 8%;
+
+    --secondary: 222 30% 18%;
+    --secondary-foreground: 43 50% 85%;
+
+    --muted: 222 25% 15%;
+    --muted-foreground: 220 15% 55%;
+
+    --accent: 43 72% 55%;
+    --accent-foreground: 222 47% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 43 30% 25%;
+    --input: 222 30% 18%;
+    --ring: 43 72% 55%;
+
+    --radius: 0.5rem;
+
+    --gold: 43 72% 55%;
+    --gold-light: 43 60% 70%;
+    --gold-dark: 43 80% 40%;
+    --navy: 222 47% 8%;
+    --navy-light: 222 35% 16%;
+    --navy-medium: 222 40% 12%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+    --font-accent: 'Cormorant Garamond', serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .gold-border-ornate {
+    border: 1px solid hsl(var(--gold) / 0.3);
+    box-shadow:
+      inset 0 0 20px hsl(var(--gold) / 0.05),
+      0 0 15px hsl(var(--gold) / 0.1);
+  }
+
+  .gold-text {
+    color: hsl(var(--gold));
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(135deg, hsl(var(--gold-dark)), hsl(var(--gold)), hsl(var(--gold-light)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.4), transparent);
+  }
+
+  .navy-card {
+    background: linear-gradient(145deg, hsl(var(--navy-medium)), hsl(var(--navy)));
+    border: 1px solid hsl(var(--gold) / 0.2);
+  }
+
+  .gold-btn {
+    background: linear-gradient(135deg, hsl(var(--gold-dark)), hsl(var(--gold)));
+    color: hsl(var(--navy));
+    font-family: var(--font-body);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+  }
+
+  .gold-btn:hover {
+    background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
+    box-shadow: 0 4px 20px hsl(var(--gold) / 0.3);
+  }
+
+  .gold-btn-outline {
+    background: transparent;
+    border: 1px solid hsl(var(--gold));
+    color: hsl(var(--gold));
+    font-family: var(--font-body);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+  }
+
+  .gold-btn-outline:hover {
+    background: hsl(var(--gold) / 0.1);
+  }
+
+  .star-rating {
+    color: hsl(var(--gold));
+  }
+}
