@@ -2,6 +2,7 @@
 # Node modules
 # -----------------------------
 node_modules/
+design-images/
 
 # -----------------------------
 # Next.js build output
